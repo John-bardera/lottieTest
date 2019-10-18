@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpHandler, HttpRequest, HttpResponse } from '@angular/common/http';
-import { map } from 'rxjs/operators';
-import { normalizeKeys } from 'object-keys-normalizer';
-import { environment } from '@environment';
+import {Injectable} from '@angular/core';
+import {HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
+import {map} from 'rxjs/operators';
+import {normalizeKeys} from 'object-keys-normalizer';
+import {environment} from '@environment';
 
 @Injectable()
 export class ApiResponseInterceptor implements HttpInterceptor {
@@ -25,12 +25,8 @@ export class ApiResponseInterceptor implements HttpInterceptor {
     if (!url) {
       return false;
     }
-    // メインのAPIと葉隠
-    const isHagakureUrl = url.includes(`${environment.hagakureApi.host}`);
-    const isApiUrl =
-      environment.api.host === 'localhost'
+    return environment.api.host === 'localhost'
         ? url.includes(`${environment.api.host}:${environment.api.port}`)
         : url.includes(environment.api.host);
-    return isHagakureUrl || isApiUrl;
   }
 }

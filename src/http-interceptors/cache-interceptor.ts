@@ -6,6 +6,6 @@ export class CacheInterceptor implements HttpInterceptor {
   constructor() {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
-      null;
+      return next.handle(req);
   }
 }
