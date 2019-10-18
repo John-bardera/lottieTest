@@ -16,7 +16,7 @@ import { httpInterceptorProviders } from '../http-interceptors';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
-      BrowserModule,
+    BrowserModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule

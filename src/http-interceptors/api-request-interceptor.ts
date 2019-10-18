@@ -3,7 +3,8 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpHeaders, HttpParams } fr
 import { normalizeKeys } from 'object-keys-normalizer';
 import snakeCase from 'lodash.snakecase';
 
-import { environment, Environment } from '@environment';
+import { environment } from '@environment';
+import { EnvironmentInterface } from '../environments/environment.type';
 
 @Injectable()
 export class ApiRequestInterceptor implements HttpInterceptor {
@@ -14,10 +15,8 @@ export class ApiRequestInterceptor implements HttpInterceptor {
     let headers: HttpHeaders = req.headers;
     let body = req.body;
     let params = req.params;
-    console.log(this.isInternalApiReq(req.url));
     if (this.isInternalApiReq(req.url)) {
       requestUrl = `${this.buildHttpHost(environment)}/api/${req.url}`;
-      console.log(requestUrl);
       params = this.toSnakeCaseParams(params);
       if (['POST', 'PUT', 'PATCH'].includes(req.method)) {
         headers = headers.set('Content-Type', 'application/json');
@@ -32,7 +31,7 @@ export class ApiRequestInterceptor implements HttpInterceptor {
     return next.handle(newReq);
   }
 
-  private buildHttpHost(env: Environment): string {
+  private buildHttpHost(env: EnvironmentInterface): string {
     const scheme = env.api.ssl ? 'https' : 'http';
     const port = env.api.port !== 80 && env.api.port !== 443 ? `:${env.api.port}` : '';
     return `${scheme}://${env.api.host}${port}`;

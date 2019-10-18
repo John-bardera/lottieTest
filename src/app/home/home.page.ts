@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -7,14 +6,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor(
-      private http: HttpClient
-  ) {
-    console.log('hoge');
-    this.http.get('hogehoge').subscribe(_ => {
-      console.log(_);
-    });
-  }
+  constructor() { }
 
 }

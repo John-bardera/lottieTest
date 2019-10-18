@@ -1,6 +1,6 @@
-import { Environment } from './environment.type';
+import { EnvironmentInterface } from './environment.type';
 
-export const environment: Environment = {
+export const environment: EnvironmentInterface = {
   name: 'prod',
   production: true,
   api: {

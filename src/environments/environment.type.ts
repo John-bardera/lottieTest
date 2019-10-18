@@ -4,7 +4,7 @@ export interface ApiHost {
     ssl: boolean;
 }
 
-export interface Environment {
+export interface EnvironmentInterface {
     name: 'dev' | 'stg' | 'prod';
     production: boolean;
     api: ApiHost;

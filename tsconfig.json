@@ -19,7 +19,8 @@
       "dom"
     ],
     "paths": {
-      "@environment": ["./src/environments/environment.ts"]
+      "@environment": ["./src/environments/environment.ts"],
+      "@environment-interface": ["./src/environments/environment.type.ts"]
     }
   },
   "angularCompilerOptions": {
