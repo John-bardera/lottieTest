@@ -14,9 +14,10 @@ export class ApiRequestInterceptor implements HttpInterceptor {
     let headers: HttpHeaders = req.headers;
     let body = req.body;
     let params = req.params;
-
+    console.log(this.isInternalApiReq(req.url));
     if (this.isInternalApiReq(req.url)) {
       requestUrl = `${this.buildHttpHost(environment)}/api/${req.url}`;
+      console.log(requestUrl);
       params = this.toSnakeCaseParams(params);
       if (['POST', 'PUT', 'PATCH'].includes(req.method)) {
         headers = headers.set('Content-Type', 'application/json');
