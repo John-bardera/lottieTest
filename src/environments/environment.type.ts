@@ -1,11 +1,11 @@
 export interface ApiHost {
-    host: string;
-    port: number;
-    ssl: boolean;
+  host: string;
+  port: number;
+  ssl: boolean;
 }
 
 export interface EnvironmentInterface {
-    name: 'dev' | 'stg' | 'prod';
-    production: boolean;
-    api: ApiHost;
+  name: 'dev' | 'stg' | 'prod';
+  production: boolean;
+  api: ApiHost;
 }

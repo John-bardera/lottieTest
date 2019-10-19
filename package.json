@@ -23,7 +23,27 @@
     "format:html": "prettier --write 'src/**/*.html' --parser angular",
     "format": "npm run format:ts && npm run format:html",
     "sass-lint": "sass-lint -v",
-    "sass-lint:fix": "sass-lint-auto-fix -c .sass-lint.yml"
+    "sass-lint:fix": "sass-lint -c .sass-lint.yml -v -q"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run format:ts",
+      "git add"
+    ],
+    "*.scss": [
+      "npm run sass-lint:fix",
+      "git add"
+    ],
+    "*.html": [
+      "npm run format:html",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run lint"
+    }
   },
   "private": true,
   "dependencies": {
@@ -72,9 +92,13 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "lint-staged": "^10.0.0-0",
     "protractor": "~5.4.0",
+    "rxjs-tslint": "^0.1.7",
+    "sass-lint": "git+https://github.com/justinanastos/sass-lint.git#fix/1224/property-sort-order-throwing-css-variables",
     "ts-node": "~7.0.0",
-    "tslint": "~5.15.0",
+    "tslint": "^5.15.0",
+    "tslint-eslint-rules": "^5.4.0",
     "typescript": "~3.4.3"
   },
   "description": "An Ionic project",
