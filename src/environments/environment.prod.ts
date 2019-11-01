@@ -1,4 +1,4 @@
-import { EnvironmentInterface } from '@environment';
+import { EnvironmentInterface } from './environment.type';
 
 export const environment: EnvironmentInterface = {
   name: 'prod',
