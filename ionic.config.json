@@ -1,7 +1,8 @@
 {
   "name": "ionic4Template",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
