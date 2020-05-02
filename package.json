@@ -13,8 +13,6 @@
     "ionic:build:dev": "ng build app --configuration=dev",
     "ionic:build:stg": "ng build app --configuration=stg",
     "ionic:build:prod": "ng build app --configuration=prod",
-    "ionic:build:ios": "ionic cordova build ios --engine=cordova",
-    "ionic:build:android": "ionic cordova build android --engine=cordova",
     "test": "ng test",
     "lint": "npm run nglint && npm run sass-lint",
     "e2e": "ng e2e",
