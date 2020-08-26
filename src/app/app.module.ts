@@ -8,12 +8,12 @@ import { StoreModule } from '@ngrx/store';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
-import { ApisModule } from '../apis/apis.module';
 import { httpInterceptorProviders } from '../http-interceptors';
-import { ServicesModule } from '../services/services.module';
-import { reducers } from '../store';
+import { ApisModule } from './apis/apis.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ServicesModule } from './services/services.module';
+import { reducers } from './stores';
 
 @NgModule({
   declarations: [AppComponent],
