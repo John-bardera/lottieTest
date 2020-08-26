@@ -1,8 +1,10 @@
-import {Injectable} from '@angular/core';
-import {HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
-import {map} from 'rxjs/operators';
-import {normalizeKeys} from 'object-keys-normalizer';
-import {environment} from '@environment';
+import { HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { map } from 'rxjs/operators';
+
+import { normalizeKeys } from 'object-keys-normalizer';
+
+import { environment } from '@environment';
 
 @Injectable()
 export class ApiResponseInterceptor implements HttpInterceptor {

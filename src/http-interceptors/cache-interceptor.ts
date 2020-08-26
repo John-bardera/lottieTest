@@ -1,5 +1,5 @@
+import { HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpResponse } from '@angular/common/http';
 
 @Injectable()
 export class CacheInterceptor implements HttpInterceptor {
